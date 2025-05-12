@@ -41,7 +41,7 @@ header nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://github.com/Panama-Sec/panama-security/blob/main/hero.png') center/cover no-repeat;
     color: #ffffff;
     text-align: center;
     padding: 5rem 2rem;
