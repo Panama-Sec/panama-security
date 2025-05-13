@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div id="loading-spinner"></div>
     <header>
         <nav>
             <ul>
@@ -21,12 +22,12 @@
         </nav>
     </header>
     <main>
-        <section id="home" class="hero">
-            <h2>Welcome to Panama Security</h2>
+        <section id="home" class="hero fade-in">
+            <h1>Welcome to Panama Security</h1>
             <p>Your trusted partner in <span id="typing-effect"></span></p>
             <button onclick="location.href='about.html'">Learn More</button>
         </section>
-        <section id="projects" class="projects">
+        <section id="projects" class="projects fade-in">
             <div class="project-card">
                 <img src="project1.png" alt="Project 1">
                 <h3>Questionnaire</h3>
@@ -39,13 +40,56 @@
                     to guide you towards a safer and more secure digital experience.</p>
                 </p>
             </div>
+            <div class="project-card">
+                <img src="project3.png" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>We are working on a malware analysis tool that will help you analyze and understand malware behavior.</p>
+            </div>
+            <div class="project-card">
+                <img src="project4.png" alt="Project 4">
+                <h3>Project 4</h3>
+                <p>We plan on incorporating battle-tested tooling into <br>our work environment so that you can enjoy your ordinary life!</p>
+            </div>
+            <div class="project-card">
+                <img src="project5.png" alt="Project 5">
+                <h3>Project 5</h3>
+                <p>We are constantly scraping threat intelligence <br>from trusted sources so that our clients could be prepared in-advance.</p>
+            </div>
+            <div class="project-card">
+                <img src="project6.png" alt="Project 6">
+                <h3>Project 6</h3>
+                <p>Panama Security's development branch, A.K.A One Day Labs will <br>introduce a new platform for collaborating malware analysts to document their findings.</p>    
+            </div>
             <!-- Add more project cards as needed -->
         </section>
+      <section id="testimonials" class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-carousel">
+        <div class="testimonial">
+            <p>"Panama Security helped us secure our systems efficiently!"</p>
+            <h4>- Pavel Drurov</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Their expertise in malware analysis is unmatched!"</p>
+            <h4>- Scott Peterson</h4>
+        </div>
+        <div class="testimonial">
+            <p>"I highly recommend Panama Security for any security needs!"</p>
+            <h4>- John Doe</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Their team is knowledgeable and responsive!"</p>
+            <h4>- Jane Smith</h4>
+        </div>
+    </div>
+    <button class="carousel-prev" onclick="prevTestimonial()">&#10094;</button>
+    <button class="carousel-next" onclick="nextTestimonial()">&#10095;</button>
+</section>
     </main>
     <footer>
         <p>&copy; 2025 Panama Security. All rights reserved.</p>
         <div class="social-icons">
-            <a href="https://github.com/panama-sec" target="_blank">
+            <a href="https://github.com/panama-sec" target="_blank" aria-label="GitHub">
                 <i class='fab fa-github' style='font-size:48px;color:black'></i>
             </a>
             <a href="https://instagram.com/@Panama-Sec" target="_blank">
@@ -54,12 +98,29 @@
             <a href="https://t.me/@one_day_labs" target="_blank">
                 <i class='fab fa-telegram' style='font-size:48px;color:black'></i>
             </a>
-            <a href="mailto:secprobeelit3@proton.me">
+            <a href="mailto:secprobeelit3@proton.me" aria-label="Email">
                 <i class='fas fa-envelope' style='font-size:48px;color:black'></i>
             </a>
         </div>
     </footer>
     <button class="scroll-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
+    <button id="theme-toggle" class="theme-toggle">Switch Theme</button>
     <script src="scripts.js"></script>
+    <script>
+        function applyTheme() {
+            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            document.body.classList.toggle("dark-theme", prefersDarkScheme);
+        }
+
+        // Apply theme on page load
+        applyTheme();
+
+        // Listen for changes in system theme
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyTheme);
+
+        window.addEventListener("load", () => {
+            document.getElementById("loading-spinner").style.display = "none";
+        });
+    </script>
 </body>
 </html>

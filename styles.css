@@ -1,14 +1,26 @@
 /* General Styles */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #007acc;
+}
+
+body.dark-theme {
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --primary-color: #1e90ff;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #0d1117, #161b22);
-    color: #c9d1d9;
+    color: var(--text-color);
 }
 
 header {
-    background-color: #161b22;
+    background-color: var(--primary-color);
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
@@ -45,6 +57,9 @@ header nav ul li a:hover {
     color: #ffffff;
     text-align: center;
     padding: 5rem 2rem;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 .hero h2 {
@@ -62,6 +77,9 @@ header nav ul li a:hover {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
 }
 
 .project-card {
@@ -129,10 +147,10 @@ button:hover, .button:hover {
 
 /* Footer */
 footer {
-    background-color: #161b22;
-    color: #8b949e;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 20px;
     text-align: center;
-    padding: 1rem 0;
     margin-top: 2rem;
     font-size: 0.9rem;
 }
@@ -335,10 +353,127 @@ footer .social-icons a:hover {
     transform: translateY(-5px);
 }
 
+/* Typing Effect */
+#typing-effect {
+    display: inline-block;
+    border-right: 2px solid var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(30, end), blink 0.5s step-end infinite alternate;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from { border-color: transparent; }
+    to { border-color: var(--text-color); }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading Spinner */
+#loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid var(--background-color);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: #1f6feb;
+    color: #ffffff;
+}
+
+/* Fade In Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Testimonial Carousel */
+.testimonial-carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.testimonial {
+    flex: 0 0 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.testimonial.active {
+    opacity: 1;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header nav ul {
         flex-direction: column;
+        align-items: center;
+
+    }
+    .project-card {
+        width: 100%;
     }
 
     .hero h2 {
