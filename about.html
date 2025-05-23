@@ -5,41 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Panama Security</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="mission.html">Mission</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="projects.html"><i class="fas fa-tasks"></i> Projects</a></li>
+                <li><a href="mission.html"><i class="fas fa-bullseye"></i> Mission</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="about-container">
-            <h1>About Us</h1>
-            <p>Panama Security is dedicated to enhancing cybersecurity and addressing software vulnerabilities. Our mission is to provide comprehensive solutions and resources to help organizations safeguard their digital assets.</p>
+        <section class="about-container fade-in">
+            <h1><i class="fas fa-user-shield"></i> About Us</h1>
+            <p>
+                <span id="typing-effect">Panama Security is dedicated to enhancing cybersecurity and addressing software vulnerabilities. Our mission is to provide comprehensive solutions and resources to help organizations safeguard their digital assets.</span>
+            </p>
             <div class="about-grid">
                 <div class="about-card">
                     <h2><i class="fas fa-users"></i> Our Team</h2>
                     <p>Our team comprises experienced professionals with a passion for cybersecurity. We collaborate to research, analyze, and mitigate vulnerabilities in various software systems.</p>
+                    <ul class="custom-list">
+                        <li><i class="fas fa-user-tie"></i> Certified Security Experts</li>
+                        <li><i class="fas fa-laptop-code"></i> Software Engineers</li>
+                        <li><i class="fas fa-search"></i> Vulnerability Researchers</li>
+                    </ul>
                 </div>
                 <div class="about-card">
                     <h2><i class="fas fa-shield-alt"></i> Our Approach</h2>
                     <p>We adopt a proactive approach to security, utilizing the latest tools and methodologies to identify potential threats before they can be exploited.</p>
+                    <ul class="custom-list">
+                        <li><i class="fas fa-bug"></i> Continuous Vulnerability Scanning</li>
+                        <li><i class="fas fa-brain"></i> Threat Intelligence Analysis</li>
+                        <li><i class="fas fa-sync-alt"></i> Ongoing Security Training</li>
+                    </ul>
                 </div>
                 <div class="about-card">
                     <h2><i class="fas fa-handshake"></i> Get Involved</h2>
                     <p>If you're interested in joining our efforts or learning more about cybersecurity, please reach out through our contact page.</p>
+                    <div class="social-links">
+                        <a href="https://twitter.com/" target="_blank" class="social-link"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="https://github.com/" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="mailto:info@panamasecurity.com" class="social-link"><i class="fas fa-envelope"></i> Email Us</a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2025 Panama Security. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:info@panamasecurity.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
     </footer>
+    <!-- Optional: Fade-in on scroll for visual enhancement -->
+    <script>
+    // Simple fade-in on scroll for .fade-in elements
+    document.addEventListener('DOMContentLoaded', () => {
+        const fadeEls = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.2 });
+        fadeEls.forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(30px)';
+            observer.observe(el);
+        });
+    });
+    </script>
 </body>
 </html>
