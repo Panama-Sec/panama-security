@@ -4,16 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panama Security</title>
+    <meta name="description" content="Panama Security: Your trusted partner in digital security, malware analysis, and cybersecurity solutions.">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Example spinner style: ideally put in styles.css */
+        #loading-spinner {
+            position: fixed;
+            z-index: 9999;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #loading-spinner:empty {
+            display: none;
+        }
+        #loading-spinner::after {
+            content: '';
+            border: 8px solid #e0e0e0;
+            border-top: 8px solid #333;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to {transform: rotate(360deg);}
+        }
+    </style>
 </head>
 <body>
-    <div id="loading-spinner"></div>
+    <div id="loading-spinner" aria-label="Page loading"></div>
     <header>
         <nav>
             <ul>
-                <li><a href="home.html">Home</a></li>
+                <li><a href="home.html" aria-current="page">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="mission.html">Mission</a></li>
@@ -24,105 +53,124 @@
     <main>
         <section id="home" class="hero fade-in">
             <h1>Welcome to Panama Security</h1>
-            <p>Your trusted partner in <span id="typing-effect"></span></p>
-            <button onclick="location.href='about.html'">Learn More</button>
+            <p>Your trusted partner in <span id="typing-effect">cybersecurity</span></p>
+            <button type="button" onclick="location.href='about.html'">Learn More</button>
         </section>
         <section id="projects" class="projects fade-in">
             <div class="project-card">
-                <img src="project1.png" alt="Project 1">
+                <img src="project1.png" alt="Screenshot of the Questionnaire project">
                 <h3>Questionnaire</h3>
-                <p>Bid farewell to your weekend with an enjoyable quiz on malware triage, analysis and general CS!</p>
+                <p>Take an engaging quiz on malware triage, analysis, and computer science topics!</p>
             </div>
             <div class="project-card">
-                <img src="project2.png" alt="Project 2">
-                <h3>Project 2</h3>
-                <p>Factual and informative documentations on various malware analysis techniques, safety measures, even triage tips and tricks
-                    to guide you towards a safer and more secure digital experience.
-                <a href="https://www.youtube.com/@DevBitLabs">Panama Security's Official Youtube Channel</a></p>
+                <img src="project2.png" alt="Documentation project screenshot">
+                <h3>Malware Analysis Docs</h3>
+                <p>Factual, informative documentation on malware analysis techniques, safety measures, and triage tips. 
+                    <a href="https://www.youtube.com/@DevBitLabs" rel="noopener noreferrer" target="_blank">Visit our YouTube Channel</a>
                 </p>
             </div>
             <div class="project-card">
-                <img src="project3.png" alt="Project 3">
-                <h3>Project 3</h3>
-                <p>We are working on a malware analysis tool that will help you analyze and understand malware behavior.
-                <a href="https://github.com/Panama-Sec/ai-malware-analyst-assistant">Learn more</a></p>
+                <img src="project3.png" alt="AI Malware Analyst Assistant screenshot">
+                <h3>Malware Analyst Assistant</h3>
+                <p>We are building a tool to help analyze and understand malware behavior. 
+                    <a href="https://github.com/Panama-Sec/ai-malware-analyst-assistant" rel="noopener noreferrer" target="_blank">Learn more</a>
+                </p>
             </div>
             <div class="project-card">
-                <img src="project4.png" alt="Project 4">
-                <h3>Project 4</h3>
-                <p>We plan on incorporating battle-tested tooling into <br>our work environment so that you can enjoy your ordinary life!</p>
+                <img src="project4.png" alt="Tooling Integration project screenshot">
+                <h3>Tooling Integration</h3>
+                <p>Introducing reliable security tools into daily workflows for a more secure digital environment.</p>
             </div>
             <div class="project-card">
-                <img src="project5.png" alt="Project 5">
-                <h3>Project 5</h3>
-                <p>We are constantly scraping threat intelligence <br>from trusted sources so that our clients could be prepared in-advance.</p>
+                <img src="project5.png" alt="Threat Intelligence project screenshot">
+                <h3>Threat Intelligence</h3>
+                <p>We continuously gather threat intelligence from trusted sources so our clients can stay ahead of threats.</p>
             </div>
             <div class="project-card">
-                <img src="project6.png" alt="Project 6">
-                <h3>Project 6</h3>
-                <p>Panama Security's development branch, A.K.A One Day Labs will <br>introduce a new platform for collaborating malware analysts to document their findings.</p>    
+                <img src="project6.png" alt="One Day Labs platform screenshot">
+                <h3>One Day Labs</h3>
+                <p>Our development branch will soon launch a new platform for malware analysts to collaborate and document findings.</p>
             </div>
             <!-- Add more project cards as needed -->
         </section>
-      <section id="testimonials" class="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="testimonial-carousel">
-        <div class="testimonial">
-            <p>"Panama Security helped us secure our systems efficiently!"</p>
-            <h4>- Pavel Drurov</h4>
-        </div>
-        <div class="testimonial">
-            <p>"Their expertise in malware analysis is unmatched!"</p>
-            <h4>- Scott Peterson</h4>
-        </div>
-        <div class="testimonial">
-            <p>"I highly recommend Panama Security for any security needs!"</p>
-            <h4>- John Doe</h4>
-        </div>
-        <div class="testimonial">
-            <p>"Their team is knowledgeable and responsive!"</p>
-            <h4>- Jane Smith</h4>
-        </div>
-    </div>
-    <button class="carousel-prev" onclick="prevTestimonial()">&#10094;</button>
-    <button class="carousel-next" onclick="nextTestimonial()">&#10095;</button>
-</section>
+        <section id="testimonials" class="testimonials">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-carousel" aria-live="polite">
+                <div class="testimonial" id="testimonial-1">
+                    <p>"Panama Security helped us secure our systems efficiently!"</p>
+                    <h4>- Pavel Drurov</h4>
+                </div>
+                <div class="testimonial" id="testimonial-2" hidden>
+                    <p>"Their expertise in malware analysis is unmatched!"</p>
+                    <h4>- Scott Peterson</h4>
+                </div>
+                <div class="testimonial" id="testimonial-3" hidden>
+                    <p>"I highly recommend Panama Security for any security needs!"</p>
+                    <h4>- John Doe</h4>
+                </div>
+                <div class="testimonial" id="testimonial-4" hidden>
+                    <p>"Their team is knowledgeable and responsive!"</p>
+                    <h4>- Jane Smith</h4>
+                </div>
+            </div>
+            <button class="carousel-prev" onclick="prevTestimonial()" aria-label="Previous testimonial">&#10094;</button>
+            <button class="carousel-next" onclick="nextTestimonial()" aria-label="Next testimonial">&#10095;</button>
+        </section>
     </main>
     <footer>
         <p>&copy; 2025 Panama Security. All rights reserved.</p>
         <div class="social-icons">
-            <a href="https://github.com/panama-sec" target="_blank" aria-label="GitHub">
-                <i class='fab fa-github' style='font-size:48px;color:black'></i>
+            <a href="https://github.com/panama-sec" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i class="fab fa-github" aria-hidden="true" style="font-size:48px;color:black"></i>
             </a>
-            <a href="https://instagram.com/@Panama-Sec" target="_blank">
-                <i class='fab fa-instagram' style='font-size:48px;color:black'></i>
+            <a href="https://instagram.com/Panama-Sec" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fab fa-instagram" aria-hidden="true" style="font-size:48px;color:black"></i>
             </a>
-            <a href="https://t.me/@one_day_labs" target="_blank">
-                <i class='fab fa-telegram' style='font-size:48px;color:black'></i>
+            <a href="https://t.me/one_day_labs" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                <i class="fab fa-telegram" aria-hidden="true" style="font-size:48px;color:black"></i>
             </a>
             <a href="mailto:secprobeelit3@proton.me" aria-label="Email">
-                <i class='fas fa-envelope' style='font-size:48px;color:black'></i>
+                <i class="fas fa-envelope" aria-hidden="true" style="font-size:48px;color:black"></i>
             </a>
         </div>
     </footer>
-    <button class="scroll-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
-    <button id="theme-toggle" class="theme-toggle">Switch Theme</button>
+    <button class="scroll-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" aria-label="Scroll to top">↑</button>
+    <button id="theme-toggle" class="theme-toggle" type="button">Switch Theme</button>
     <script src="scripts.js"></script>
     <script>
+        // Theme handling
         function applyTheme() {
             const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
             document.body.classList.toggle("dark-theme", prefersDarkScheme);
         }
-
-        // Apply theme on page load
         applyTheme();
-
-        // Listen for changes in system theme
         window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyTheme);
 
+        // Loading spinner
         window.addEventListener("load", () => {
-            document.getElementById("loading-spinner").style.display = "none";
+            document.getElementById("loading-spinner").innerHTML = '';
         });
+
+        // Testimonial carousel logic
+        let testimonialIndex = 1;
+        const testimonialCount = 4;
+        function showTestimonial(n) {
+            for (let i = 1; i <= testimonialCount; i++) {
+                document.getElementById('testimonial-' + i).hidden = (i !== n);
+            }
+        }
+        function prevTestimonial() {
+            testimonialIndex = testimonialIndex === 1 ? testimonialCount : testimonialIndex - 1;
+            showTestimonial(testimonialIndex);
+        }
+        function nextTestimonial() {
+            testimonialIndex = testimonialIndex === testimonialCount ? 1 : testimonialIndex + 1;
+            showTestimonial(testimonialIndex);
+        }
+        showTestimonial(testimonialIndex);
+
+        // Typing effect (optional, fallback text present)
+        // Add your typing effect JS here if needed
     </script>
 </body>
 </html>
